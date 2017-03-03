@@ -28,10 +28,31 @@ public class LoginServlet extends HttpServlet{
         String user = (String) req.getParameter("login");
         String password = (String) req.getParameter("password");
 
-        req.setAttribute("user", user);
-        req.getRequestDispatcher("/loginResponse.jsp").forward(req, resp);
+        final String gestLogin= "Gest";
+        final String correctPwdGest = "1579";
 
-    }
+            if(user.equals(gestLogin)){
+                //(2) Validation: if user == "Gest" and password == "1579"
+                if(password.equals(correctPwdGest)){
+                    resp.setStatus(HttpServletResponse.SC_OK);
+                    req.setAttribute("massage","Congratulations, "+ user + ", you login!");
+                    req.getRequestDispatcher("/loginResponse.jsp").forward(req, resp);
+                }
+                else
+                {
+                    resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                    req.setAttribute("massage", user+", password is not correct! ");
+                    req.getRequestDispatcher("/loginResponse.jsp").forward(req, resp);
+                }
+            }
+            else {
+                //(1) No validation: if user == any and password == any
+                resp.setStatus(HttpServletResponse.SC_OK);
+                req.setAttribute("massage","Congratulations, "+ user + ", you login!");
+                req.getRequestDispatcher("/loginResponse.jsp").forward(req, resp);
+            }
+
+        }
 
 
 
