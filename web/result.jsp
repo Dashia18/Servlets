@@ -22,6 +22,7 @@
 <div class = "middle" >
     <div class="box-with-shadow">
         <p id = "grey-text"> ${massage}</p>
+        <p id = "grey-text"> ${massage2}</p>
     </div>
 </div>
 </body>
