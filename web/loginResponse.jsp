@@ -21,7 +21,7 @@
 
 <div class = "middle" >
     <div class="box-with-shadow">
-        <p id = "grey-text">Congratulations, ${user}, you login!</p>
+        <p id = "grey-text"> ${massage}</p>
     </div>
 </div>
 </body>
