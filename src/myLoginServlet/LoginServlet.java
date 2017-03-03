@@ -36,20 +36,20 @@ public class LoginServlet extends HttpServlet{
                 if(password.equals(correctPwdGest)){
                     resp.setStatus(HttpServletResponse.SC_OK);
                     req.setAttribute("massage","Congratulations, "+ user + ", you login!");
-                    req.getRequestDispatcher("/loginResponse.jsp").forward(req, resp);
+                    req.getRequestDispatcher("/result.jsp").forward(req, resp);
                 }
                 else
                 {
                     resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
                     req.setAttribute("massage", user+", password is not correct! ");
-                    req.getRequestDispatcher("/loginResponse.jsp").forward(req, resp);
+                    req.getRequestDispatcher("/result.jsp").forward(req, resp);
                 }
             }
             else {
                 //(1) No validation: if user == any and password == any
                 resp.setStatus(HttpServletResponse.SC_OK);
                 req.setAttribute("massage","Congratulations, "+ user + ", you login!");
-                req.getRequestDispatcher("/loginResponse.jsp").forward(req, resp);
+                req.getRequestDispatcher("/result.jsp").forward(req, resp);
             }
 
         }
