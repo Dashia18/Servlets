@@ -28,27 +28,27 @@ public class LoginServlet extends HttpServlet{
         String user = (String) req.getParameter("login");
         String password = (String) req.getParameter("password");
 
-        final String gestLogin= "Gest";
-        final String correctPwdGest = "1579";
+        final String guestLogin= "Guest";
+        final String correctPwdGuest = "1579";
 
-            if(user.equals(gestLogin)){
-                //(2) Validation: if user == "Gest" and password == "1579"
-                if(password.equals(correctPwdGest)){
+            if(user.equals(guestLogin)){
+                //(2) Validation: if user == "Guest" and password == "1579"
+                if(password.equals(correctPwdGuest)){
                     resp.setStatus(HttpServletResponse.SC_OK);
-                    req.setAttribute("massage","Congratulations, "+ user + ", you login!");
+                    req.setAttribute("massage1","Congratulations, "+ user + ", you login!");
                     req.getRequestDispatcher("/result.jsp").forward(req, resp);
                 }
                 else
                 {
                     resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-                    req.setAttribute("massage", user+", password is not correct! ");
+                    req.setAttribute("massage1", user+", password is not correct! ");
                     req.getRequestDispatcher("/result.jsp").forward(req, resp);
                 }
             }
             else {
                 //(1) No validation: if user == any and password == any
                 resp.setStatus(HttpServletResponse.SC_OK);
-                req.setAttribute("massage","Congratulations, "+ user + ", you login!");
+                req.setAttribute("massage1","Congratulations, "+ user + ", you login!");
                 req.getRequestDispatcher("/result.jsp").forward(req, resp);
             }
 

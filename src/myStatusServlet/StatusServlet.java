@@ -15,6 +15,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 
 
 @WebServlet("/statusServlet")
@@ -37,10 +38,11 @@ public class StatusServlet extends HttpServlet{
         Date Msg_time = new Date();
 
         SimpleDateFormat df = new SimpleDateFormat("MM/dd/YYYY HH:mm");
+        df.setTimeZone(TimeZone.getTimeZone("GMT+03"));
         String formattedDate = df.format(Msg_time);
 
         resp.setStatus(HttpServletResponse.SC_OK);
-        req.setAttribute("massage","Data and time now:  " + formattedDate );
+        req.setAttribute("massage1","Date and time now:  " + formattedDate );
         req.setAttribute("massage2","Your browser is:  " +userAgent);
         req.getRequestDispatcher("/result.jsp").forward(req, resp);
 
