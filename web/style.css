@@ -34,17 +34,17 @@ body {
 .box-with-shadow{
     width: 450px;
 
-    margin: 7px;
+
     box-shadow: 0 0 5px;
     border-radius: 10px;
-    float: left;
+    margin: 0 auto;
 
 }
 #grey-text{
     font-family: Arial;
     font-size: 18px;
     color: #808080;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-left: 30px;
     text-align:  left;
 
@@ -94,5 +94,18 @@ form input {
 p{
     padding-right: 10px;
     padding-bottom: 10px;
-    
+
+
+}
+
+#text{
+    width: 400px;
+    height: 100px;
+
+}
+
+.send{
+    width: 400px;
+
+
 }
