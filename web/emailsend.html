@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet">
+    <title>Email send</title>
+</head>
+<body>
+<div class="main-title">
+    <p id = tittle-text > Email send </p>
+</div>
+
+<div class = "middle" >
+    <div class="box-with-shadow">
+        <p id = "grey-text">Please, enter e-mail, subject, cc and text of the mail</p>
+
+        <form action="emailSendServlet" method="POST">
+
+            e-mail: <input type="text" name="email" class="send"/>
+            <br />
+            subject: <input type="text" name="subject" class="send"/>
+            <br />
+            cc: <input type="text" name="cc" class="send"/>
+            <br />
+            text:   <textarea type="text" name="text" id="text"></textarea>
+            <input class ="button" type="submit" value="Send" />
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>
